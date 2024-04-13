@@ -4,10 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
     // Variables para almacenar el operador y los números ingresados
@@ -55,7 +52,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     // Función para manejar los eventos de los botones numéricos y el punto decimal
-    fun presionar(view: View){
+    fun presionar(view:View){
         var num2 : String = entrada_2.text.toString()
 
         // Se concatena el número o el punto a entrada_2
@@ -102,3 +99,4 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
+
