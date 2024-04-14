@@ -12,7 +12,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.button.MaterialButton
 // use " martina por mi gata"
 /*
-Descripción corta del problema: Mostrar imagen y mensaje
+Descripción corta del problema: reproductor de musica
 
 Autor: Elias Manchego Navarro
 Fecha creación: 9/04/204

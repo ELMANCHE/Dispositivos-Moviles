@@ -4,7 +4,13 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+/*
+Descripción corta del problema: Mostrar imagen y mensaje
 
+Autor: Elias Manchego Navarro
+Fecha creación: 9/04/204
+Fecha última modificación: 13/04/2024
+*/
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         // Llama al método onCreate de la clase padre AppCompatActivity
