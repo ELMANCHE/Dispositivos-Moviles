@@ -5,7 +5,13 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+/*
+Descripción corta del problema: calculadora
 
+Autor: Elias Manchego Navarro
+Fecha creación: 7/04/204
+Fecha última modificación: 13/04/2024
+*/
 class MainActivity : AppCompatActivity() {
     // Variables para almacenar el operador y los números ingresados
     var oper: Int = 0  // Almacena el operador seleccionado: 1 para suma, 2 para resta, 3 para multiplicación, 4 para división
