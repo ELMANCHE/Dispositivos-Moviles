@@ -5,9 +5,12 @@ import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.button.MaterialButton
-
+// use " martina por mi gata"
 /*
 Descripción corta del problema: Mostrar imagen y mensaje
 
@@ -15,7 +18,7 @@ Autor: Elias Manchego Navarro
 Fecha creación: 9/04/204
 Fecha última modificación: 13/04/2024
 */
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() { // Definimos nuestra clase MainActivity como una subclase de AppCompatActivity.
 
     // Lazy initialization para abrir el archivo de la canción actual.
     val fd by lazy {
@@ -37,42 +40,43 @@ class MainActivity : AppCompatActivity() {
 
     // Lista de botones de control obtenidos de los recursos de diseño.
     val controllers by lazy {
-        listOf(R.id.atras, R.id.parar, R.id.reproducir, R.id.adelante).map {
+        listOf(R.id.prev, R.id.stop, R.id.play, R.id.next).map {
             findViewById<MaterialButton>(it)
         }
     }
 
     // Objeto para definir constantes de índice para los botones.
-    object cj {
-        val atras = 0
-        val parar = 1
-        val reproducir = 2
-        val adelante = 3
+    object cj{
+        val prev = 0
+        val stop = 1
+        val play = 2
+        val next = 3
     }
 
     // TextView para mostrar el nombre de la canción actual.
-    val nombreCancion by lazy {
+    val nombreCancion by lazy{
         findViewById<TextView>(R.id.nombreCancion)
     }
 
     // Lista de canciones filtradas obtenidas de los recursos de activos.
-    val canciones by lazy {
+    val canciones by lazy{
         val nombreficheros = assets.list("")?.toList() ?: listOf()
         nombreficheros.filter { it.contains(".m4a") }
     }
 
     // Índice de la canción actual, con manejo de límites.
     var cancionActualIndex = 0
-        set(value) {
-            var v = if (value == -1) {
-                canciones.size - 1
-            } else {
-                value % canciones.size
+        set(value){
+            var v = if(value == -1){
+                canciones.size-1
+            }
+            else{
+                value%canciones.size
             }
             field = v
         }
 
-    lateinit var cancionActual: String // Nombre de la canción actual, inicializada más tarde.
+    lateinit var cancionActual:String // Nombre de la canción actual, inicializada más tarde.
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState) // Llamada al método onCreate de la clase base.
@@ -81,10 +85,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // Asignación de listeners a los botones de control.
-        controllers[cj.reproducir].setOnClickListener(this::playclick)
-        controllers[cj.parar].setOnClickListener(this::stopclik)
-        controllers[cj.atras].setOnClickListener(this::prevclicked)
-        controllers[cj.adelante].setOnClickListener(this::nextclicked)
+        controllers[cj.play].setOnClickListener(this::playclick)
+        controllers[cj.stop].setOnClickListener(this::stopclik)
+        controllers[cj.prev].setOnClickListener(this::prevclicked)
+        controllers[cj.next].setOnClickListener(this::nextclicked)
 
         // Obtención del nombre de la canción actual y su visualización.
         cancionActual = canciones[cancionActualIndex]
@@ -92,37 +96,38 @@ class MainActivity : AppCompatActivity() {
     }
 
     // Función para manejar el clic en el botón de reproducción.
-    fun playclick(v: View) {
-        if (!musicPlayer.isPlaying) {
+    fun playclick(v: View){
+        if(!musicPlayer.isPlaying){
             musicPlayer.start()
             nombreCancion.visibility = View.VISIBLE
-        } else {
+        }
+        else{
             musicPlayer.pause()
         }
     }
 
     // Función para manejar el clic en el botón de detención.
-    fun stopclik(v: View) {
-        if (musicPlayer.isPlaying) {
+    fun stopclik(v: View){
+        if(musicPlayer.isPlaying){
             musicPlayer.pause()
         }
         musicPlayer.seekTo(0)
     }
 
     // Función para manejar el clic en el botón de siguiente.
-    fun nextclicked(v: View) {
+    fun nextclicked(v:View){
         cancionActualIndex++
         refreshsong()
     }
 
     // Función para manejar el clic en el botón de anterior.
-    fun prevclicked(v: View) {
+    fun prevclicked(v:View){
         cancionActualIndex--
         refreshsong()
     }
 
     // Función para actualizar la canción actual.
-    fun refreshsong() {
+    fun refreshsong(){
         musicPlayer.reset()
         val fd = assets.openFd(cancionActual)
         musicPlayer.setDataSource(
@@ -131,7 +136,7 @@ class MainActivity : AppCompatActivity() {
             fd.length
         )
         musicPlayer.prepare()
-        playclick(controllers[cj.reproducir])
+        playclick(controllers[cj.play])
         nombreCancion.text = cancionActual
     }
 }
