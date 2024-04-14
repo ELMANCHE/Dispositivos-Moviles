@@ -31,3 +31,5 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
+
+funcinal

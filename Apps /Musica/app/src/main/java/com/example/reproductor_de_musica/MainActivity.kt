@@ -140,3 +140,5 @@ class MainActivity : AppCompatActivity() { // Definimos nuestra clase MainActivi
         nombreCancion.text = cancionActual
     }
 }
+
+funcional
