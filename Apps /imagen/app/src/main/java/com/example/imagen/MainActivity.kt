@@ -32,4 +32,4 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
-funcinal
+//funcinal

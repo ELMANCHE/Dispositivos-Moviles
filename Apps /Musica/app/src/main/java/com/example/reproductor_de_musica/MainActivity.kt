@@ -141,4 +141,4 @@ class MainActivity : AppCompatActivity() { // Definimos nuestra clase MainActivi
     }
 }
 
-funcional
+//funcional
