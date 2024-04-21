@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">Reproductor_de_musica</string>
+    <string name="app_name">musica</string>
+
+    <string-array name="musicx">
+        <item> Elige tu potaxio favorito</item>
+        <item>  play My Drum</item>
+        <item> KO </item>
+        <item> Be the One</item>
+        <item> Cry for U</item>
+    </string-array>
 </resources>
