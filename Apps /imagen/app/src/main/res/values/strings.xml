@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Imagen</string>
+
+    <string-array name="fotxs">
+        <item> Elige tu potaxio favorito</item>
+        <item> potaxio1 </item>
+        <item> potaxio2 </item>
+        <item> potaxio3 </item>
+        <item> potaxio4 </item>
+    </string-array>
 </resources>
+
+
