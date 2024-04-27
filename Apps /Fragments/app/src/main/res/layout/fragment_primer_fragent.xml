@@ -1,21 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
-    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:background="@color/fragment1">
+    android:background="@color/fragment1"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".primer_fragent">
 
-    <TextView
+
+
+    <Spinner
+        android:id="@+id/spiner"
+        style="@style/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:text="hola"
-        android:textSize="30dp"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="50dp"
-        android:textColor="@color/purple_200"/>
+        android:entries="@array/fotxs" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:src="@drawable/image1" />
 
 
-
-
-</RelativeLayout>
+</LinearLayout>

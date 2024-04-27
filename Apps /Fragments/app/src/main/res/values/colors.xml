@@ -5,4 +5,8 @@
     <color name="purple_200">#FFBB86FC</color>
     <color name="fragment1">#FFC107</color>
     <color name="fragment2">#FF9800</color>
+    <color name="purple_500">#FF6200EE</color> <!-- Color primario -->
+    <color name="purple_700">#FF3700B3</color> <!-- Variante del color primario -->
+    <color name="teal_200">#FF80CBC4</color> <!-- Color secundario -->
+    <color name="teal_700">#FF00796B</color> <!-- Variante del color secundario -->
 </resources>
