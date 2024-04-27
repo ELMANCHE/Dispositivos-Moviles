@@ -1,4 +1,7 @@
 package com.example.fragment
 
-class segundo_fragent {
+import androidx.fragment.app.Fragment
+
+class segundo_fragent : Fragment(R.layout.fragment_segundo_fragment){
+
 }
