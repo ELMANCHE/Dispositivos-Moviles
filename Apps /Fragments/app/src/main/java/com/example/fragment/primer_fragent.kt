@@ -7,7 +7,13 @@ import android.widget.ImageView
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-
+/*
+Descripción corta del problema: Mostrar imagen y mensaje pero en el fragment
+Lo principal fue es que trate este main como un fragment y no el main principal, por ello funciono
+Autor: Elias Manchego Navarro
+Fecha creación: 25/04/204
+Fecha última modificación: 27/04/2024
+*/
 class primer_fragent : Fragment(R.layout.fragment_primer_fragent){
 
     private lateinit var spinnView: Spinner // Declaración de una variable para el Spinner

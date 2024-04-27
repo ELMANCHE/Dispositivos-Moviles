@@ -8,4 +8,15 @@
         <item> potaxio3 </item>
         <item> potaxio4 </item>
     </string-array>
+
+
+
+    <string-array name="musicx">
+        <item> Elige tu potaxio favorito</item>
+        <item>  BEST BEHAVIOUR</item>
+        <item> JUST DANCE </item>
+        <item> PLAY MY DRUM</item>
+        <item> RADIOACTIVE</item>
+        <item> CRY FOR YOU</item>
+    </string-array>
 </resources>
