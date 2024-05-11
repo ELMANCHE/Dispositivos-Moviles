@@ -1,12 +1,14 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
-    id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
     namespace = "com.example.quiz"
     compileSdk = 34
+    dataBinding {
+        enable = true
+    }
 
     defaultConfig {
         applicationId = "com.example.quiz"
@@ -37,6 +39,7 @@ android {
 }
 
 dependencies {
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -46,6 +49,6 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    implementation "androidx.navigation:navigation-fragment-ktx:2.4.0"
-    implementation "androidx.navigation:navigation-ui-ktx:2.4.0"
+    implementation ("androidx.navigation:navigation-fragment-ktx:2.7.7")
+    implementation ("androidx.navigation:navigation-ui-ktx:2.7.7")
 }

@@ -1,17 +1,15 @@
-plugins {
-    alias(libs.plugins.androidApplication) apply false
-    alias(libs.plugins.jetbrainsKotlinAndroid) apply false
-}
-
-repositories {
-    google()
-}
-
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     repositories {
         google()
     }
     dependencies {
-        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.4.0"
+        classpath ("androidx.navigation:navigation-safe-args-gradle-plugin:2.7.7")
     }
+}
+
+
+plugins {
+    alias(libs.plugins.androidApplication) apply false
+    alias(libs.plugins.jetbrainsKotlinAndroid) apply false
 }
