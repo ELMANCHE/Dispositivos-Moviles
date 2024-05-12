@@ -168,6 +168,18 @@ class GameFragment : Fragment(), View.OnClickListener {
         }
     }
 
+    private fun selectedOptionView(tv: TextView, selectedPosion: Int) {
+
+        mSelectedPosition = selectedPosion
+
+        tv.setTextColor(Color.parseColor("#363A43"))
+        tv.setTypeface(tv.typeface, Typeface.BOLD)
+        tv.background = context?.let { ContextCompat.getDrawable(it, R.drawable.selected_option_potaxie) }
+
+        
+
+    }
+
     private fun answerView(correctAnswer: Int, drawableView: Int) {
 
         when(mSelectedPosition){
