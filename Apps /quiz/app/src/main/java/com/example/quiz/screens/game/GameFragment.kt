@@ -107,36 +107,69 @@ class GameFragment : Fragment(), View.OnClickListener {
 
             R.id.tv_optionOne -> {
 
-                Toast.makeText(context, "Option one CLICKED", Toast.LENGTH_SHORT).show()
+
             }
 
 
             R.id.tv_optionTwo -> {
 
-                Toast.makeText(context, "Option two CLICKED", Toast.LENGTH_SHORT).show()
+
 
 
             }
 
             R.id.tv_optionThree -> {
 
-                Toast.makeText(context, "Option theree CLICKED", Toast.LENGTH_SHORT).show()
 
 
             }
 
             R.id.tv_optionFour -> {
 
-                Toast.makeText(context, "Option four CLICKED", Toast.LENGTH_SHORT).show()
 
             }
 
             R.id.btnSubmit -> {
 
-                Toast.makeText(context, "submit CLICKED", Toast.LENGTH_SHORT).show()
+                if(mSelectedPosition == 0){
+
+                    mCurrrentPosition ++
+
+                    when{
+                        mCurrrentPosition <= mQuestionslist.size->{
+
+                            setQuestion()
+                        }else ->{
+                            Toast.makeText(context, "FINALIZO GOGOOG", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                }else{
+                    val question = mQuestionslist[mCurrrentPosition -1]
+                    if(question!!.correctAnswer!=mSelectedPosition){
+
+                        answerView(mSelectedPosition, R.drawable.wrong_option_potaxie)
+                }   else {
+                    mCorrectAnswer ++
+                        answerView(question.correctAnswer,R.drawable.default_option_fondopotaxie)
+
+                        if (mCurrrentPosition == mQuestionslist.size){
+                            binding.btnSubmit.text = " TERMINADO "
+                        }else{
+                            binding.btnSubmit.text = " SIGUIENTE GOGOGO"
+                        }
+                    }
+
+                    mSelectedPosition = 0
+
+                }
+
 
             }
         }
+    }
+
+    private fun answerView(correctAnswer: Int, defaultOptionFondopotaxie: Int) {
+
     }
 
 }
