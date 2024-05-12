@@ -9,12 +9,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import com.example.quiz.Constants
 import com.example.quiz.Question
 import com.example.quiz.R
 import com.example.quiz.databinding.FragmentGameBinding
+import kotlinx.coroutines.selects.select
 
 
 class GameFragment : Fragment(), View.OnClickListener {
@@ -100,8 +102,41 @@ class GameFragment : Fragment(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        TODO("Not yet implemented")
-    }
 
+        when (v?.id) {
+
+            R.id.tv_optionOne -> {
+
+                Toast.makeText(context, "Option one CLICKED", Toast.LENGTH_SHORT).show()
+            }
+
+
+            R.id.tv_optionTwo -> {
+
+                Toast.makeText(context, "Option two CLICKED", Toast.LENGTH_SHORT).show()
+
+
+            }
+
+            R.id.tv_optionThree -> {
+
+                Toast.makeText(context, "Option theree CLICKED", Toast.LENGTH_SHORT).show()
+
+
+            }
+
+            R.id.tv_optionFour -> {
+
+                Toast.makeText(context, "Option four CLICKED", Toast.LENGTH_SHORT).show()
+
+            }
+
+            R.id.btnSubmit -> {
+
+                Toast.makeText(context, "submit CLICKED", Toast.LENGTH_SHORT).show()
+
+            }
+        }
+    }
 
 }
