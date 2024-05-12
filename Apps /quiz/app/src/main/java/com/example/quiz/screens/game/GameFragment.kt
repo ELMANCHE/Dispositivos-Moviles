@@ -1,5 +1,6 @@
 package com.example.quiz.screens.game
 
+import android.content.Context
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
@@ -108,6 +109,8 @@ class GameFragment : Fragment(), View.OnClickListener {
             R.id.tv_optionOne -> {
 
 
+
+
             }
 
 
@@ -150,7 +153,7 @@ class GameFragment : Fragment(), View.OnClickListener {
                         answerView(mSelectedPosition, R.drawable.wrong_option_potaxie)
                 }   else {
                     mCorrectAnswer ++
-                        answerView(question.correctAnswer,R.drawable.default_option_fondopotaxie)
+                        answerView(question.correctAnswer,R.drawable.correct_border)
 
                         if (mCurrrentPosition == mQuestionslist.size){
                             binding.btnSubmit.text = " TERMINADO "
@@ -168,7 +171,38 @@ class GameFragment : Fragment(), View.OnClickListener {
         }
     }
 
-    private fun answerView(correctAnswer: Int, defaultOptionFondopotaxie: Int) {
+    private fun answerView(correctAnswer: Int, drawableView: Int) {
+
+        when(mSelectedPosition){
+
+            1->{
+
+                binding.tvOptionOne.background =
+                    context?.let { ContextCompat.getDrawable(it, drawableView) }
+
+            }
+
+            2->{
+
+                binding.tvOptionTwo.background =
+                    context?.let { ContextCompat.getDrawable(it, drawableView) }
+
+            }
+
+            3->{
+
+                binding.tvOptionThree.background =
+                    context?.let { ContextCompat.getDrawable(it, drawableView) }
+
+            }
+
+            4->{
+
+                binding.tvOptionFour.background =
+                    context?.let { ContextCompat.getDrawable(it, drawableView) }
+
+            }
+        }
 
     }
 
