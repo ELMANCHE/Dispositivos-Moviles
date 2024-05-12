@@ -108,28 +108,25 @@ class GameFragment : Fragment(), View.OnClickListener {
 
             R.id.tv_optionOne -> {
 
-
-
+                selectedOptionView(binding.tvOptionOne, 1)
 
             }
 
 
             R.id.tv_optionTwo -> {
 
-
-
+                selectedOptionView(binding.tvOptionTwo, 2)
 
             }
 
             R.id.tv_optionThree -> {
 
-
-
+                selectedOptionView(binding.tvOptionThree, 3)
             }
 
             R.id.tv_optionFour -> {
 
-
+                selectedOptionView(binding.tvOptionFour, 4)
             }
 
             R.id.btnSubmit -> {
