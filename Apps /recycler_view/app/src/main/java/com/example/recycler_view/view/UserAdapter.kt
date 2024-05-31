@@ -1,12 +1,15 @@
 package com.example.recycler_view.view
 
+import android.content.Context
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recycler_view.R
+import com.example.recycler_view.model.UserData
 
-class UserAdapter() : RecyclerView.Adapter<UserAdapter.UserViewHolder>()
+class UserAdapter(val c: Context,val userlist:ArrayList<UserData>) : RecyclerView.Adapter<UserAdapter.UserViewHolder>()
 {
 
     inner class UserViewHolder(val v:View): RecyclerView.ViewHolder(v){
@@ -15,14 +18,18 @@ class UserAdapter() : RecyclerView.Adapter<UserAdapter.UserViewHolder>()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
-        TODO("Not yet implemented")
+        val inflater = LayoutInflater.from(parent.context)
+        val v = inflater.inflate(R.layout.lista_items,parent,false)
+        return UserViewHolder(v)
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return userlist.size
     }
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        val newList = userlist[position]
+        holder.name.text = newList.userName
+        holder.mbNum.text = newList.userMb
     }
 }
