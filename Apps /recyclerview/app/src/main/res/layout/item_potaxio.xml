@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
@@ -19,6 +19,22 @@
         android:layout_height="wrap_content"
         tools:text="hola"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivPotaxie"/>
+
+    <TextView
+        android:id="@+id/tvRealName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="hola"
+        app:layout_constraintTop_toBottomOf="@+id/tvPotaxioName"
+        app:layout_constraintStart_toEndOf="@+id/ivPotaxie"/>
+
+    <TextView
+        android:id="@+id/tvPublisher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="hola"
+        app:layout_constraintTop_toBottomOf="@+id/tvRealName"
         app:layout_constraintStart_toEndOf="@+id/ivPotaxie"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
