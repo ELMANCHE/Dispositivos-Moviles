@@ -17,6 +17,8 @@ class potaxioAdapter(private val potaxioList: List<potaxio>): RecyclerView.Adapt
     override fun getItemCount(): Int = potaxioList.size
 
     override fun onBindViewHolder(holder: potaxioViewHolder, position: Int) {
+        val item = potaxioList[position]
+        holder.render(item)
 
     }
 }
