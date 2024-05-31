@@ -7,6 +7,7 @@ import com.example.recyclerview.potaxio
 class potaxioAdapter(val potaxioList: List<potaxio>): RecyclerView.Adapter<potaxioViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): potaxioViewHolder {
 
+
     }
 
     override fun getItemCount(): Int = potaxioList.size
